@@ -23,12 +23,13 @@ def authenticateKey(key):
     if key == authKey:
         if enviroment == 'dev':
             print("Authenticator called.")
+            # Due to it being a dev enviroment SSL certificates are not checked. DO NOT USE DEV IN A PRODUCTION ENVIRONMENT
             r = requests.post('https://simpanel.local/daemon/verify', data={'daemonKey': key} , verify=False)
             print(r.status_code, r.reason)
             data = r.json()
             return data
         else:
-            r = requests.post('https://simpanel.local/daemon/verify', data={'daemonKey': key} , verify=False)
+            r = requests.post('https://simpanel.local/daemon/verify', data={'daemonKey': key})
             data = r.json()
             return data
 
@@ -44,7 +45,7 @@ def authenticate(data, client):
         if enviroment == 'dev':
             print('Connection Accepted', client.address)
         return True
-    else:
-        if enviroment == 'dev':
-            print('Connection Rejected', client.address)
-        return False
+
+    if enviroment == 'dev':
+        print('Connection Rejected', client.address)
+    return False

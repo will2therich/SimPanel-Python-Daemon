@@ -28,9 +28,8 @@ def handlecommand(command, data, client):
             authorisedClients.append(client)
             message = "Access Granted"
             return message
-        else:
-            message = "Access Denied"
-            return message
+        message = "Access Denied"
+        return message
 
     if command == 'ping':
         return 'pong'
@@ -38,4 +37,3 @@ def handlecommand(command, data, client):
     if command == 'close':
         authorisedClients.remove(client)
         return 'close'
-

@@ -46,7 +46,7 @@ class DaemonWebsocketService(WebSocket):
             if returnMessage == 'close':
                 print(self.address , "Disconnected")
                 self.sendMessage(u'Returned:' + returnMessage)
-                self.handleClosed(self)
+                self.handleClosed()
 
             self.sendMessage(u'Returned:' +returnMessage)
 
