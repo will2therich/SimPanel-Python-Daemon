@@ -28,10 +28,10 @@ def authenticateKey(key):
             print(r.status_code, r.reason)
             data = r.json()
             return data
-        else:
-            r = requests.post('https://simpanel.local/daemon/verify', data={'daemonKey': key})
-            data = r.json()
-            return data
+
+        r = requests.post('https://simpanel.local/daemon/verify', data={'daemonKey': key})
+        data = r.json()
+        return data
 
 def authenticate(data, client):
 
