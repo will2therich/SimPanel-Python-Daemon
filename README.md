@@ -1,4 +1,4 @@
-# SimPanel
+# SimPanel - Python Daemon
 [![CodeFactor](https://www.codefactor.io/repository/github/will2therich/simpanel-python-daemon/badge/master)](https://www.codefactor.io/repository/github/will2therich/simpanel-python-daemon/overview/master)
 
 A panel dedicated to making a server hosts life easier. designed for big & small implementations. All open source and all good! Currently designed to support all steamcmd installation games. External support is planned
