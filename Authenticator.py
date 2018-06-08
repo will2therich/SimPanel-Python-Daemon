@@ -39,8 +39,6 @@ def authenticate(data, client):
     pythonData = json.loads(siteConfirmation)
     authorised = pythonData['authorised']
 
-    print(authorised)
-
     if authorised == 'yes':
         if enviroment == 'dev':
             print('Connection Accepted', client.address)
